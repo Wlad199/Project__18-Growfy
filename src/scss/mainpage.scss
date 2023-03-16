@@ -1,3 +1,105 @@
 body {
 	font-weight: 300;
 }
+.page {
+	background-color: #0d0d11;
+}
+
+// block-text ====================================================================================================//
+
+.block-text {
+
+	&__title {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 51, 28);
+		line-height: 119.607843%; /* 61/51 */
+		color: #fff;
+		@include adaptiveValue("padding-bottom", 25, 15);
+		@media (max-width: 767px) {
+			max-width: 400px;
+		}
+	}
+
+	&__text {
+		line-height: 150%; /* 27/18 */
+		@include adaptiveValue("font-size", 18, 16);
+		@media (max-width: 767px) {
+			max-width: 600px;
+		}
+	}
+}
+
+// .main-screen ====================================================================================================//
+
+.main-screen {
+	//@include adaptiveValue("height", 116, 80, 1280, 767, 1);
+	@include adaptiveValue("padding-top", 160, 110, 128, 767, 1);
+
+		&__container {
+			display: flex;
+			align-items: center;
+			@media (max-width: 767px) {
+				flex-wrap: wrap;
+			}
+		}
+
+		&__body {
+			flex: 0 1 50%;
+			@include adaptiveValue("padding-right", 120, 20, 1280, 767, 2);
+			@media (max-width: 767px) {
+				flex: 0 1 100%;
+				@include adaptiveValue("padding-bottom", 60, 30, 767, 320, 1);
+			}
+		}
+
+		&__text-block {
+			@include adaptiveValue("padding-bottom", 33, 20);
+		}
+
+		&__buttons {
+			display: flex;
+			@include adaptiveValue("gap", 32, 20, 1280, 767, 2);
+			@media (max-width: 767px) {
+				@include adaptiveValue("gap", 32, 20, 767, 370, 1);
+			}
+			@media (max-width: 380px) {
+				flex-wrap: wrap;
+				justify-content: center;
+			}
+		}
+
+		&__button {
+			@media (max-width: 380px) {
+				flex: 0 1 80%;
+				//&:not(:last-child){
+				//	margin: 0px 0px 15px 0px;
+				//}
+			}
+		}
+
+		&__images {
+			flex: 0 1 50%;
+			display: flex;
+			@include adaptiveValue("padding-left", 93, 20, 1280, 767, 2);
+			@include adaptiveValue("padding-right", 30, 15, 1280, 767, 2);
+			@include adaptiveValue("gap", 60, 20, 1280, 767, 2);
+			@media (max-width: 767px) {
+				flex: 0 1 100%;
+				display: flex;
+				justify-content: flex-end;
+				@include adaptiveValue("gap", 60, 10, 767, 320, 1);
+			}
+		}
+
+		&__column {
+		}
+
+		&__image {
+			&:not(:last-child){
+				@include adaptiveValue("padding-bottom", 32, 10);
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+}
