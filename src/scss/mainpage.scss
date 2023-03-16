@@ -226,31 +226,40 @@ body {
 	&__container {
 		display: flex;
 		align-items: center;
-		@media (max-width: 992px) {
+		@media (max-width: 550px) {
 			flex-wrap: wrap-reverse;
 		}
 	}
 
 	&__image {
 		flex: 0 1 50%;
-		@media (max-width: 992px) {
+		@media (max-width: 767px) {
+			flex: 0 1 40%;
+		}
+		@media (max-width: 550px) {
 			flex: 0 1 100%;
-			@include adaptiveValue("margin-left", 320, 0, 992, 767, 1);
+			@include adaptiveValue("margin-left", 150, 0, 550, 400, 1);
 		}
 	}
 
 	&__body {
 		flex: 0 1 50%;
-		@include adaptiveValue("padding-left", 55, 15, 1280, 992, 2);
-		@media (max-width: 992px) {
+		@include adaptiveValue("padding-left", 55, 20, 1280, 550, 2);
+		@media (max-width: 767px) {
+			flex: 0 1 60%;
+		}
+		@media (max-width: 550px) {
 			flex: 0 1 100%;
-			@include adaptiveValue("padding-bottom", 70, 40, 992, 320, 1);
+			@include adaptiveValue("padding-bottom", 60, 30, 550, 320, 1);
 		}
 	}
 }
 .image-whychoose {
 	position: relative;
 	display: flex;
+	@media (max-width: 992px) {
+		display: block;
+	}
 	&::before {
 		content: '';
 		position: absolute;
@@ -263,12 +272,22 @@ body {
 	}
 
 	&__item {
-		&_1 {
+		&_2 {
 			position: relative;
 			z-index: 2;
-		}
-		&_2 {
+			order: 2;
 			align-self: flex-end;
+			img {
+				max-width: 100%;
+			}
+			@media (max-width: 550px) {
+				display: none;
+			}
+		}
+		&_1 {
+			img {
+				max-width: 100%;
+			}
 		}
 	}
 }
@@ -290,7 +309,7 @@ body {
 	&__list {
 		li {
 			line-height: 150%;
-			@include adaptiveValue("padding-bottom", 21, 15, 1280, 992, 2);
+			@include adaptiveValue("padding-bottom", 21, 15, 1280, 320, 1);
 			background: url('@img/whychoose/icon/01.svg') 0 23% no-repeat;
 			padding: 10px 0px 0px 43px;
 		}
