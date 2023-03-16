@@ -151,13 +151,13 @@ body._lock {
 				z-index: 5;
 				@include adaptiveValue("margin-right", 50, 10, 767, 320, 1);
 			}
-			@media (max-width: 450px) {
 				padding: 10px 12px;
 				letter-spacing: 1px;
-			}
 		}
 	}
 }
+
+
 .menu {
 	@include adaptiveValue("height", 116, 80, 1280, 767, 1);
 	display: flex;
@@ -196,4 +196,11 @@ body._lock {
 	}
 }
 .menu-link {
+}
+
+.header._header-scroll .menu {
+	height: 60px;
+}
+.header._header-scroll {
+	background-color:rgba(#0d0d11, 0.6)
 }
