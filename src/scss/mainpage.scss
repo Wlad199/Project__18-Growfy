@@ -5,30 +5,6 @@ body {
 	background-color: #0d0d11;
 }
 
-// block-text ====================================================================================================//
-
-.block-text {
-
-	&__title {
-		font-weight: 500;
-		@include adaptiveValue("font-size", 51, 28);
-		line-height: 119.607843%; /* 61/51 */
-		color: #fff;
-		@include adaptiveValue("padding-bottom", 25, 15);
-		@media (max-width: 767px) {
-			max-width: 400px;
-		}
-	}
-
-	&__text {
-		line-height: 150%; /* 27/18 */
-		@include adaptiveValue("font-size", 18, 16);
-		@media (max-width: 767px) {
-			max-width: 600px;
-		}
-	}
-}
-
 // .main-screen ====================================================================================================//
 
 .main-screen {
@@ -102,4 +78,224 @@ body {
 				max-width: 100%;
 			}
 		}
+}
+
+// partners ====================================================================================================//
+
+.partners {
+	@include adaptiveValue("padding-top", 193, 40);
+
+	&__container {
+	}
+
+	&__title {
+		text-align: center;
+		font-size: 14px;
+		line-height: 160%;
+		@include adaptiveValue("padding-bottom", 25, 15);
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		@media (min-width: 992px) {
+		justify-content: space-between;
+		}
+	}
+
+	&__partner {
+		flex: 0 1 20%;
+		@media (max-width: 992px) {
+			flex: 0 1 33.333%;
+		}
+		@media (max-width: 992px) {
+			display: flex;
+			justify-content: center;
+		}
+		@media (max-width: 670px) {
+			flex: 0 1 50%;
+		}
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+// .services ====================================================================================================//
+
+.services {
+	@include adaptiveValue("padding-top", 160, 60);
+
+	&__container {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__body {
+		@include adaptiveValue("padding-right", 105, 20, 1280, 767, 2);
+		flex: 0 1 45%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("padding-bottom", 60, 30, 992, 320, 1);
+		}
+	}
+
+	&__profit {
+		flex: 0 1 55%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+		}
+		@media (max-width: 500px) {
+			flex-wrap: wrap;
+		}
+	}
+}
+.body-services {
+
+	&__marker {
+		@include adaptiveValue("margin-bottom", 30, 20);
+	}
+
+	&__text-block {
+		@include adaptiveValue("padding-bottom", 33, 20);
+	}
+
+	&__button {
+	}
+}
+
+.block-text__title_m {
+	padding: 0px 0px 12px 0px;
+}
+
+.profit-services {
+	display: flex;
+	@include adaptiveValue("gap", 32, 15, 1280, 992, 2);
+	@include adaptiveValue("gap", 32, 15, 992, 500, 1);
+
+	&__column {
+
+		&_1{
+			margin: 48px 0px 0px 0px;
+
+		}
+		&_2 {
+			
+		}
+		//@media (max-width: 500px) {
+		//	width: 100%;
+		//}
+	}
+
+	&__item {
+		background: rgba(129, 129, 139, 0.1);
+		border-radius: 30px;
+		@include adaptiveValue("padding-top", 55, 25, 1280, 992, 2);
+		@include adaptiveValue("padding-bottom", 60, 30, 1280, 992, 2);
+		@include adaptiveValue("padding-right", 25, 15, 1280, 992, 2);
+		@include adaptiveValue("padding-left", 25, 15, 1280, 992, 2);
+
+		@include adaptiveValue("padding-top", 40, 15, 992, 320, 1);
+		@include adaptiveValue("padding-bottom", 50, 20, 992, 320, 1);
+		@include adaptiveValue("padding-right", 20, 10, 992, 320, 1);
+		@include adaptiveValue("padding-left", 20, 10, 992, 320, 1);
+		&:not(:last-child){
+			@include adaptiveValue("margin-bottom", 32, 15, 1280, 992, 2);
+			@include adaptiveValue("margin-bottom", 32, 15, 992, 320, 1);
+		}
+	}
+
+	&__image {
+		@include adaptiveValue("padding-bottom", 16, 14);
+
+	}
+
+	&__little-text-block {
+	}
+}
+
+// whychoose ====================================================================================================//
+
+.whychoose {
+	@include adaptiveValue("padding-top", 192, 60);
+	padding: 0px 0px 100px 0px;
+
+	&__container {
+		display: flex;
+		align-items: center;
+		@media (max-width: 992px) {
+			flex-wrap: wrap-reverse;
+		}
+	}
+
+	&__image {
+		flex: 0 1 50%;
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("margin-left", 320, 0, 992, 767, 1);
+		}
+	}
+
+	&__body {
+		flex: 0 1 50%;
+		@include adaptiveValue("padding-left", 55, 15, 1280, 992, 2);
+		@media (max-width: 992px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("padding-bottom", 70, 40, 992, 320, 1);
+		}
+	}
+}
+.image-whychoose {
+	position: relative;
+	display: flex;
+	&::before {
+		content: '';
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		width: 122px;
+		height: 122px;
+		background: url('@img/whychoose/decore.svg');
+	}
+
+	&__item {
+		&_1 {
+			position: relative;
+			z-index: 2;
+		}
+		&_2 {
+			align-self: flex-end;
+		}
+	}
+}
+.body-whychoose {
+
+	&__marker {
+		@include adaptiveValue("margin-bottom", 43, 25, 1280, 992, 2);
+		@include adaptiveValue("margin-bottom", 43, 25, 992, 320, 1);
+	}
+
+	&__text-block {
+		@include adaptiveValue("padding-bottom", 35, 25, 1280, 992, 2);
+		@include adaptiveValue("padding-bottom", 35, 25, 992, 320, 1);
+		@media (max-width: 992px) {
+			max-width: 600px;
+		}
+	}
+
+	&__list {
+		li {
+			line-height: 150%;
+			@include adaptiveValue("padding-bottom", 21, 15, 1280, 992, 2);
+			background: url('@img/whychoose/icon/01.svg') 0 23% no-repeat;
+			padding: 10px 0px 0px 43px;
+		}
+	}
+
+	&__item {
+	}
 }

@@ -1,1 +1,83 @@
 // Заголовки, общие БЄМ блоки и проче...
+
+// button ====================================================================================================//
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #24242a;
+	border-radius: 50px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 157.142857%; /* 22/14 */
+	letter-spacing: 2px;
+	color: #fff;
+	padding: 16px 30px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		background-color: $blue;
+	}
+}
+
+// block-text ====================================================================================================//
+
+.block-text {
+
+	&__title {
+		font-weight: 500;
+		@include adaptiveValue("font-size", 51, 28);
+		line-height: 119.607843%; /* 61/51 */
+		color: #fff;
+		@include adaptiveValue("padding-bottom", 25, 15);
+		@media (max-width: 767px) {
+			max-width: 400px;
+		}
+		&_40 {
+			@include adaptiveValue("padding-bottom", 40, 20);
+		}
+	}
+
+	&__text {
+		line-height: 150%; /* 27/18 */
+		@include adaptiveValue("font-size", 18, 16);
+		@media (max-width: 767px) {
+			max-width: 600px;
+		}
+		&_m {
+			@include adaptiveValue("padding-right", 115, 0, 1280, 992, 2);
+			
+		}
+	}
+}
+
+// marker ====================================================================================================//
+
+.marker {
+	display: inline-flex;
+	font-weight: 300;
+	font-size: 11px;
+	line-height: 160%;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	border: 1px solid rgba(129, 129, 139, 0.2);
+	border-radius: 12px;
+	padding: 11px 19px;
+}
+
+// block-text-little ====================================================================================================//
+
+.block-text-little {
+
+	&__title {
+		font-size: 19px;
+		line-height: 140%;
+		color: #fff;
+		padding: 0px 0px 10px 0px;
+	}
+
+	&__text {
+		line-height: 150%;
+		color: #81818B;
+	}
+}
