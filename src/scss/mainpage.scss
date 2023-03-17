@@ -521,7 +521,6 @@ body {
 
 .blog {
 	@include adaptiveValue("padding-top", 190, 60);
-	padding: 0px 0px 100px 0px;
 
 	&__container {
 	}
@@ -544,9 +543,15 @@ body {
 	&__body {
 		display: flex;
 		justify-content: space-between;
+		@media (max-width: 992px) {
+			display: block;
+		}
 	}
 
 	&__text-block {
+		@media (max-width: 992px) {
+			@include adaptiveValue("padding-bottom", 50, 30, 992, 320, 1);
+		}
 	}
 
 	&__button {
@@ -572,8 +577,12 @@ body {
 		border-radius: 24px;
 		@media (max-width: 992px) {
 			flex: 0 1 100%;
-			margin: 40px 40px;
-			@include adaptiveValue("margin", 40, 0, 992, 767, 1);
+			@include adaptiveValue("margin", 40, 20, 992, 767, 2);
+		}
+		@media (max-width: 767px) {
+			&:not(:last-child){
+				@include adaptiveValue("margin-bottom", 25, 15, 767, 320, 1);
+			}
 		}
 	}
 
@@ -610,6 +619,12 @@ body {
 		@include adaptiveValue("padding-bottom", 40, 25, 1280, 992, 2);
 		@include adaptiveValue("padding-right", 27, 15, 1280, 992, 2);
 		@include adaptiveValue("padding-left", 27, 15, 1280, 992, 2);
+		@media (max-width: 992px) {
+			@include adaptiveValue("padding-top", 26, 20, 992, 320, 1);
+			@include adaptiveValue("padding-bottom", 26, 25, 992, 320, 1);
+			@include adaptiveValue("padding-left", 25, 10, 992, 320, 1);
+			@include adaptiveValue("padding-right", 25, 10, 992, 320, 1);
+		}
 	}
 
 	&__data {
@@ -632,4 +647,98 @@ body {
 
 .block-text-little__text_b {
 	@include adaptiveValue("padding-bottom", 20, 15);
+}
+
+// scaling ====================================================================================================//
+
+.scaling {
+	@include adaptiveValue("padding-top", 190, 60);
+	padding: 0px 0px 100px 0px;
+
+	&__container {
+	}
+
+	&__place {
+		@include adaptiveValue("padding-bottom", 52, 20, 1280, 320, 1);
+		@include adaptiveValue("padding-top", 52, 20, 1280, 320, 1);
+		background: rgba(129, 129, 139, 0.1);
+		border-radius: 30px;
+		display: flex;
+		@media (max-width: 767px) {
+			flex-wrap: wrap;
+			@include adaptiveValue("padding", 30, 10, 767, 320, 1);
+		}
+	}
+
+	&__body {
+		flex: 0 1 370px;
+		//max-width: 370px;
+		margin: 0 auto;
+		text-align: center;
+		@media (max-width: 767px) {
+			flex: 0 1 100%;
+			@include adaptiveValue("padding-bottom", 40, 25, 767, 320, 1);
+		}
+	}
+
+	&__buttons {
+	}
+}
+.body-scaling {
+
+	&__title {
+		@include adaptiveValue("font-size", 32, 22);
+		line-height: 140%;
+		font-weight: 400;
+		color: #fff;
+		@include adaptiveValue("padding-bottom", 16, 10, 1280, 320, 1);
+	}
+
+	&__text {
+		line-height: 150%;
+		@include adaptiveValue("font-size", 16, 14);
+	}
+}
+.buttons-scaling {
+	flex: 0 1 50%;
+	align-self: center;
+	display: flex;
+	justify-content: center;
+	//gap: 30px;
+	@include adaptiveValue("gap", 30, 15, 1280, 320, 1);
+		@media (max-width: 992px) {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	@media (max-width: 767px) {
+		flex: 0 1 100%;
+		display: block;
+		text-align: center;
+	}
+	@media (max-width: 470px) {
+		display: flex;
+	}
+
+
+	&__button {
+		background-color: rgba(129, 129, 139, 0.2);
+		&:not(:last-child){
+			//@include adaptiveValue("margin-right", 32, 20, 1280, 992, 2);
+			//@include adaptiveValue("margin-right", 32, 10, 767, 380, 2);
+		}
+		
+		@media (max-width: 992px) {
+			width: 175px;
+		}
+		@media (max-width: 767px) {
+			&:not(:last-child){
+				@include adaptiveValue("margin-right", 30, 15, 767, 470, 2);
+			}
+		}
+		@media (max-width: 470px) {
+		width: 80%;
+		}
+	}
 }
