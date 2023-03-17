@@ -1,3 +1,127 @@
-//====================================================================================================
+.footer-text {
+	line-height: 150%;
+}
 
-//====================================================================================================
+.footer-list {
+	line-height: 120%;
+	li {
+		&:not(:last-child){
+			@include adaptiveValue("padding-bottom", 24.5, 16, 1280, 992, 2);
+		}
+	}
+}
+
+.footer-title {
+	font-size: 20px;
+	font-weight: 500;
+	line-height: 120%;
+	color: #fff;
+}
+
+
+// footer ====================================================================================================//
+
+.footer {
+	@include adaptiveValue("padding-top", 254, 60);
+	background-color: #0d0d11;
+
+	&__container {
+	}
+
+	&__column {
+		padding: 0px 10px;
+	}
+}
+
+
+.footer-top {
+	margin: 0px -10px;
+	display: flex;
+	@include adaptiveValue("padding-bottom", 272, 40);
+}
+.column-footer-one {
+	flex: 0 1 33.333%;
+
+	&__image {
+		display: inline-block;
+		@include adaptiveValue("padding-bottom", 34, 20);
+	}
+
+	&__text {
+		max-width: 347px;
+		@include adaptiveValue("padding-bottom", 33, 20);
+	}
+
+	&__social {
+		display: flex;
+		li {
+			&:not(:last-child){
+				@include adaptiveValue("padding-right", 16, 10);
+			}
+		}
+	}
+}
+.column-footer-two {
+	flex: 0 1 16.667%;
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 30, 20);
+	}
+
+	&__list {
+	}
+}
+.column-footer-three {
+	flex: 0 1 16.667%;
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 30, 20);
+	}
+
+	&__list {
+	}
+}
+.column-footer-four {
+	flex: 0 1 33.333%;
+
+	&__title {
+		@include adaptiveValue("padding-bottom", 30, 20);
+	}
+
+	&__text {
+		@include adaptiveValue("padding-bottom", 33, 20);
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		margin: 0 auto;
+		max-width: 80%;
+		gap: 16px;
+		//@include adaptiveValue("gap", 16, 5, 1280, 992, 2);
+	}
+
+	&__button {
+	}
+}
+
+
+.footer-bottom {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include adaptiveValue("padding-top", 46, 20);
+	@include adaptiveValue("padding-bottom", 46, 20);
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		border: 1px solid rgba(129, 129, 139, 0.2);
+	}
+
+	&__text {
+	}
+}
