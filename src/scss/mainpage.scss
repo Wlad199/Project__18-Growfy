@@ -653,7 +653,6 @@ body {
 
 .scaling {
 	@include adaptiveValue("padding-top", 190, 60);
-	padding: 0px 0px 100px 0px;
 
 	&__container {
 	}
