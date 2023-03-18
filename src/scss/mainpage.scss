@@ -26,6 +26,16 @@ body {
 				flex: 0 1 100%;
 				@include adaptiveValue("padding-bottom", 60, 30, 767, 320, 1);
 			}
+			//position: relative;
+			//&::before {
+			//	content: '';
+			//	position: absolute;
+			//	top: 0;
+			//	left: 0;
+			//	background: url('@img/main-screen/bg.svg') 0 0 no-repeat;
+			//	height: 100%;
+			//	width: 100%;
+			//}
 		}
 
 		&__text-block {
@@ -636,6 +646,10 @@ body {
 	&__more {
 		font-size: 14px;
 		color: #3D96F4;
+		transition: all 0.3s ease 0s; 
+		&:hover {
+			color: #0c6bd6;
+		}
 	}
 }
 .block-text-little__title_b {

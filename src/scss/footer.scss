@@ -30,6 +30,7 @@
 // footer ====================================================================================================//
 
 .footer {
+	margin: -1px 0px 0px 0px;
 	@include adaptiveValue("padding-top", 200, 60);
 	background-color: #0d0d11;
 
@@ -79,7 +80,7 @@
 				@include adaptiveValue("padding-right", 16, 10);
 			}
 		}
-		li{
+		img{
 			transition: all 0.3s ease 0s;
 			&:hover {
 				transform: scale(1.3);
