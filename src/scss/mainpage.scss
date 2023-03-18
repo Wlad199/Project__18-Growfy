@@ -26,16 +26,16 @@ body {
 				flex: 0 1 100%;
 				@include adaptiveValue("padding-bottom", 60, 30, 767, 320, 1);
 			}
-			//position: relative;
-			//&::before {
-			//	content: '';
-			//	position: absolute;
-			//	top: 0;
-			//	left: 0;
-			//	background: url('@img/main-screen/bg.svg') 0 0 no-repeat;
-			//	height: 100%;
-			//	width: 100%;
-			//}
+			position: relative;
+			&::before {
+				content: '';
+				position: absolute;
+				top: -30px;
+				left: -30px;
+				background: url('@img/main-screen/bg.svg') 0 0 / 100% no-repeat;
+				height: 122px;
+				width: 122px;
+			}
 		}
 
 		&__text-block {
@@ -294,6 +294,8 @@ body {
 			}
 		}
 		&_1 {
+			position: relative;
+			z-index: 2;
 			img {
 				max-width: 100%;
 			}
